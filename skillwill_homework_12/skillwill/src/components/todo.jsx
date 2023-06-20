@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 
-const todo = ({id,desc,action}) => {
-  return (
-    <div className='todo'>
-        <div>
-        <p><b>todo:</b> {desc}</p>
-        </div>
-        <div>
-        <button onClick={() => action(id)}>Done</button>
-        </div>
-    </div>
-  )
+class todo extends PureComponent {
+  render(){
+    const {id,desc,action} = this.props
+    return (
+      <div className='todo'>
+          <div>
+          <p><b>todo:</b> {desc}</p>
+          </div>
+          <div>
+          <button onClick={() => action(id)}>Done</button>
+          </div>
+      </div>
+    )
+  }
 }
 
 export default todo
