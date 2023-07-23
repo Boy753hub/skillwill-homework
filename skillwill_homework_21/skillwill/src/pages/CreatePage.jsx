@@ -6,17 +6,25 @@ import styles from '../styles/App.module.css'
 import { ColorRing } from 'react-loader-spinner';
 import { useHeaderContext } from '../contexts/headerContexts';
 import { PPA } from '../styles/styled';
+import { useDispatch } from 'react-redux';
+import { addTodoActions } from '../store/todo/todo.actions';
 
 const CreatePage = () => {
 
+    const dispatch = useDispatch()
     const {sendRequest, loading} = useRequest({url: '/api/v1/todo', method: 'POST'})
     const navigate = useNavigate()
+    
 
       
     const handleSubmit = ( name, lastname, desc) => {
-        sendRequest([{name: name ,lastname: lastname, desc: desc, isCompleted: false}])
-        .then(()=> navigate('/'))
-        .catch(err => console.log(err))
+        dispatch(addTodoActions({name: name ,lastname: lastname, desc: desc, isCompleted: false, id: Math.random()}))
+        navigate('/')
+
+        // sendRequest([{name: name ,lastname: lastname, desc: desc, isCompleted: false}])
+        // .then(()=> navigate('/'))
+        // .catch(err => console.log(err))
+
     
       }
       
