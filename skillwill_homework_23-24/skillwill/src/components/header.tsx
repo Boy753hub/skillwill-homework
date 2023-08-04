@@ -15,14 +15,14 @@ const Header = () => {
     <div>
       <div className={styles.lang}>
         <div className={styles.langButtons}>
-        <div className={styles.flags} onClick={()=> {setLan('eng')}}><img src={eng} alt="eng" /></div>
-        <div className={styles.flags} onClick={()=> {setLan('geo')}}> <img src={geo} alt="geo" /></div>
+        <div className={styles.flags} onClick={()=> {setLan?.('eng')}}><img src={eng} alt="eng" /></div>
+        <div className={styles.flags} onClick={()=> {setLan?.('geo')}}> <img src={geo} alt="geo" /></div>
         </div>
       </div>
           { width > 600 && <div>
           <DarkParagraph>{data[changeLan].theme}</DarkParagraph>
         <label className={`${styles.switch}`}>
-          <input onChange={() => toggle((prev)=>!prev)} value={isOpen} type="checkbox" checked={isOpen} />
+          <input onChange={() => toggle?.((prev)=>!prev)} value={isOpen} type="checkbox" checked={isOpen} />
           <span className={`${styles.slider} ${styles.round}`}></span>
         </label>
         </div>}

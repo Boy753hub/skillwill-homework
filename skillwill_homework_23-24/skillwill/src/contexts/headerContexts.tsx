@@ -1,15 +1,7 @@
 import { useContext, useMemo, createContext, ReactNode, Dispatch, SetStateAction } from "react";
 import useLocalStorage from "../Hooks/useLocalStorage";
-import { idata , iheaderContext} from "../interface/headerContext.interface";
+import { ContextValue, idata , iheaderContext} from "../interface/headerContext.interface";
 
-interface ContextValue {
-    isOpen: boolean;
-    toggle: Dispatch<SetStateAction<boolean>>
-    data: idata;
-    changeLan: string;
-    setLan: Dispatch<SetStateAction<string>>;
-  
-}
 
 const HeaderContexts = createContext<Partial<iheaderContext>>({});
 
@@ -17,7 +9,7 @@ const HeaderContexts = createContext<Partial<iheaderContext>>({});
 const HeaderContextProvider:React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isOpen = true, toggle] = useLocalStorage("tab", true);
   const [changeLan, setLan] = useLocalStorage('lang', 'eng');
-  const data: idata = {
+  const data: idata  = {
     eng: {
       create: 'Create',
       Add: 'Add',

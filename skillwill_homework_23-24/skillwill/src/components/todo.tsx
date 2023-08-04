@@ -27,13 +27,13 @@ const Todo:React.FC<itodo> = ({ id, desc , names , lastname, date , isCompleted,
   
   const finish = () =>{
     sendRequest({isCompleted: true})
-    .then(()=> resendRequest())
+    .then(()=> resendRequest?.())
     .catch((err: Error) => console.log(err))
   }
   
   const onDelete = ()=>{
     request2()
-    .then(()=> resendRequest())
+    .then(()=> resendRequest?.())
   }
 
   return (

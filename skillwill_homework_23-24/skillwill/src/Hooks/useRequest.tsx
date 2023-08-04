@@ -6,10 +6,11 @@ interface iuseRequest {
   method: string,
 }
 
+
 const useRequest = ({ url, method }: iuseRequest) => {
   const [loading, setLoading] = useState(false);
 
-  const sendRequest = async (body:iSendRequest) => {
+  const sendRequest = async (body?:iSendRequest) => {
     const res = await fetch(url, {
       method,
       headers: {

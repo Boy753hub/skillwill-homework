@@ -12,7 +12,7 @@ const TodoContextProvider:React.FC<{ children: ReactNode }> = ({children}) => {
     const {response, error , loading, resendRequest}:ifetch = useFetch({url: '/api/v1/todo', method: 'GET'})
 
     
-    const list:iList = useMemo(()=>{
+    const list = useMemo(()=>{
         return response?.items.map((user: iuser) => {
             return {
               name: user.name,

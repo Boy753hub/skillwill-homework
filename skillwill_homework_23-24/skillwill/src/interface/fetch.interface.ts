@@ -3,7 +3,7 @@ export interface ifetch{
     response: any, 
     error: Error | null, 
     loading:boolean | null, 
-    resendRequest: ()=> void
+    resendRequest: ()=> void 
 }
 
 export interface iusefetch {

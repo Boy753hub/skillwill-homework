@@ -14,7 +14,7 @@ const CreatePage = () => {
 
       
     const handleSubmit = ( name: string, lastname: string, desc: string) => {
-        sendRequest([{name: name ,lastname: lastname, desc: desc, isCompleted: false}])
+        sendRequest({name: name ,lastname: lastname, desc: desc, isCompleted: false})
         .then(()=> navigate('/'))
         .catch(err => console.log(err))
     
@@ -37,7 +37,7 @@ const CreatePage = () => {
       </div> 
       </PPA>
 
-  return <UserForm onFormSubmit={handleSubmit}/>
+  return <UserForm onFormSubmit={handleSubmit} name={''} lastname={''} desc={''}/>
   
 }
 

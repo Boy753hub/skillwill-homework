@@ -16,7 +16,7 @@ export interface icontext{
     loading: boolean,
     error: Error | undefined | null,
     resendRequest: ()=>void,
-    list: iList
+    list: any
 }
 
 export interface iuser{
@@ -34,5 +34,6 @@ export interface iList{
     desc: string,
     isCompleted: boolean,
     date: number,
-    length: ()=> {},
+    resendRequest?: ()=> void
 }
+

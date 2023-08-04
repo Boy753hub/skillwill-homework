@@ -9,6 +9,7 @@ import { ColorRing } from 'react-loader-spinner'
 import { useTodoContext } from '../contexts/todoContexts';
 import { useHeaderContext } from '../contexts/headerContexts';
 import { iList } from '../interface/todo.interface';
+// import { iList } from '../interface/todo.interface';
 
 const MainPage = () => {
     const {width} = useWindowSize()
@@ -37,9 +38,9 @@ const MainPage = () => {
   
 
     return (
-      <PPA color={width > 600 && isOpen ? '#121212' : ''} height={list.length >= 8  ? 'auto' : ''}>
+      <PPA color={width > 600 && isOpen ? '#121212' : ''}>
           <FormList> 
-          <h2>{data?[changeLan].title} : {`${list?.length}`}</h2>
+          <h2>{data[changeLan].title} : {`${list?.length}`}</h2>
           <br />
         <div>
             <Link className={styles.links} to={'/Create'}>{data[changeLan].create}</Link>

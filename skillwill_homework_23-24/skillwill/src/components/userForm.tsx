@@ -5,9 +5,9 @@ import { useHeaderContext } from '../contexts/headerContexts';
 import { iuserForm } from '../interface/userForm.interface';
 
 const UserForm:React.FC<iuserForm> = ({onFormSubmit,name, lastname, desc}) => {
-    const nameRef = useRef<HTMLInputElement>()
-    const lastnameRef = useRef<HTMLInputElement>()
-    const descRef = useRef<HTMLInputElement>();
+    const nameRef = useRef<HTMLInputElement>(null)
+    const lastnameRef = useRef<HTMLInputElement>(null)
+    const descRef = useRef<HTMLInputElement>(null);
 
     
     const {isOpen, data, changeLan} = useHeaderContext()
@@ -40,11 +40,11 @@ const UserForm:React.FC<iuserForm> = ({onFormSubmit,name, lastname, desc}) => {
             />
             <Input
               type="text"
-              placeholder={data?[changeLan].task}
+              placeholder={data[changeLan].task}
               ref={descRef}
               defaultValue={desc}
             />
-            <Button type="submit">{data?[changeLan].Add}</Button>
+            <Button type="submit">{data[changeLan].Add}</Button>
           </Form>
         </FormList>
         </div>

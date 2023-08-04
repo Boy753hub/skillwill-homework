@@ -14,22 +14,24 @@ interface dataLang{
 }
 
 export interface idata {
-    eng: dataLang,
-    geo: dataLang
+    eng?: dataLang,
+    geo?: dataLang
 }
 
 export interface ContextValue {
-    isOpen: boolean;
+    isOpen: string | number | readonly string[] | undefined | boolean;
     toggle: Dispatch<SetStateAction<boolean>>;
     data: idata; 
-    changeLan: string; 
-    setLan: Dispatch<SetStateAction<string>>;
+    changeLan?: string; 
+    setLan?: (i:string)=> {};
   }
   
   export interface iheaderContext {
-    isOpen: boolean;
+    isOpen?: any;
     toggle: Dispatch<SetStateAction<boolean>>;
-    setLan: Dispatch<SetStateAction<string>>;
-    changeLan: string; 
-    data: idata; 
+    setLan?: (i:string)=> {};
+    changeLan?: any; 
+    data: any; 
   }
+
+
