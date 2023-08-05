@@ -3,7 +3,16 @@ import React from 'react';
 import { ScrollView, StyleSheet, Text, View, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import logo from './assets/favicon.png'; // You need to replace this with the actual logo image
+import heart from './assets/heart.png'; 
+import chat from './assets/chat.png'; 
+import search from './assets/search.png'; 
+import more from './assets/more.png'; 
+import video from './assets/video.png'; 
+import home from './assets/home.png'; 
+import insta from './assets/instagram.png'; 
+import chat2 from './assets/chat2.png'; 
+import send from './assets/send.png'; 
+import bird from './assets/bird.png'; 
 
 export default function App() {
   return (
@@ -11,17 +20,45 @@ export default function App() {
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Instagram</Text>
         <View style={styles.headerLogo}>
-        <Image source={logo} style={styles.logo} />
-        <Image source={logo} style={styles.logo} />
+        <Image source={heart} style={styles.logo} />
+        <Image source={chat} style={styles.logo} />
         </View>
       </View>
       <ScrollView style={styles.feed}>
-        <Text style={styles.text}>Sample Post 1</Text>
-        <Text style={styles.text}>Sample Post 2</Text>
-        <Text style={styles.text}>Sample Post 3</Text>
+        <View style={styles.post}>
+          <Text >Sample Post 1</Text>
+          <Image source={bird} style={styles.feedImage} />
+          <View style={styles.headerLogo}>
+          <Image source={heart} style={styles.logo} />
+          <Image source={chat2} style={styles.logo} />
+          <Image source={send} style={styles.logo} />
+          </View>
+        </View>
+        <View style={styles.post}>
+          <Text >Sample Post 2</Text>
+          <Image source={bird} style={styles.feedImage} />
+          <View style={styles.headerLogo}>
+          <Image source={heart} style={styles.logo} />
+          <Image source={chat2} style={styles.logo} />
+          <Image source={send} style={styles.logo} />
+          </View>
+        </View>
+        <View style={styles.post}>
+          <Text >Sample Post 3</Text>
+          <Image source={bird} style={styles.feedImage} />
+          <View style={styles.headerLogo}>
+          <Image source={heart} style={styles.logo} />
+          <Image source={chat2} style={styles.logo} />
+          <Image source={send} style={styles.logo} />
+          </View>
+        </View>
       </ScrollView>
       <View style={styles.bottomBar}>
-        <Text>Bottom Navigation Bar</Text>
+        <Image source={home} style={styles.logo} />
+        <Image source={search} style={styles.logo} />
+        <Image source={more} style={styles.logo} />
+        <Image source={video} style={styles.logo} />
+        <Image source={insta} style={styles.logo} />
       </View>
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -35,7 +72,8 @@ const styles = StyleSheet.create({
   },
   headerLogo:{
     display: 'flex',
-    flexDirection:'row'
+    flexDirection:'row',
+    gap: 5,
   },
   header: {
     flexDirection: 'row',
@@ -46,8 +84,8 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ddd',
   },
   logo: {
-    width: 30,
-    height: 30,
+    width: 25,
+    height: 25,
     marginRight: 8,
   },
   headerTitle: {
@@ -56,13 +94,22 @@ const styles = StyleSheet.create({
   },
   feed: {
     flex: 1,
+    width: 'windowWidth',
   },
-  text: {
+  feedImage: {
+    width: 'auto',
+    height: 300,
+    margin: 5
+  },
+  post: {
     padding: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
   },
   bottomBar: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     borderTopWidth: 1,
     borderTopColor: '#ddd',
     padding: 10,
