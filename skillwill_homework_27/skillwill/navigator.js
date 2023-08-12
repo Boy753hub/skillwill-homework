@@ -25,11 +25,12 @@ const StackNavigator = () => {
         }}>
             <Stack.Screen name="WhatsApp" component={TabNavigator}  options={{
       
-      headerRight: () => <Text> 
-        <Feather name="camera" size={24} color="gray" />
-        <EvilIcons name="search" size={24} color="gray" />
-        <Entypo name="dots-three-vertical" size={24} color="gray" />
-      </Text>,
+      headerRight: () => (<View style={{display: 'flex', gap: 18, flexDirection: 'row' ,}}>
+            <Feather name="camera" size={24} color="gray" />
+            <EvilIcons name="search" size={24} color="gray" />
+            <Entypo name="dots-three-vertical" size={24} color="gray" />
+        </View>
+      ),
     }}/>
             {/* <Stack.Screen name="ScreenTwo" component={ScreenTwo}/> */}
         </Stack.Navigator>
